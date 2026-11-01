@@ -1,2 +1,4 @@
 # Journal
-Write your Journal questions and notes here.
+Phase 1-
+Phase 1 gave me an opportunity to practice using enums and conditional statements to manage an object's behavior. I created three states for the Sentinel Guard: IDLE, PATROLLING, and ATTACKING. I used a constructor to initialize the guard to IDLE and implemented three methods to handle different events. I found that the conditional logic was straightforward to understand, but each method needed to account for the guard's current state. Across the methods, I used four conditional branches: three in hearNoise(), one in loseTarget(), and none in seeEnemy(). If I added another state, such as Sleeping or Panicked, I would need to revisit the methods to determine how the new state should respond to each event. This could make the class more complicated as additional states and behaviors are introduced.
+
