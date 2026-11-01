@@ -1,33 +1,28 @@
 public class Main {
     public static void main(String[] args) {
+
         SentinelGuard guard = new SentinelGuard();
 
+        System.out.println("Starting State: IDLE");
 
+        // Test losing a target while IDLE
+        guard.loseTarget();
 
-        System.out.println("Current State: " + guard.getCurrentState());
+        // Test transition from IDLE to PATROLLING
+        guard.hearNoise();
 
-        guard.loseTarget(); // Should not change state, still IDLE
-        System.out.println("Current State: " + guard.getCurrentState());
-        
-        guard.hearNoise(); // Should transition to PATROLLING
-        System.out.println("Current State: " + guard.getCurrentState());
+        // Test behavior while PATROLLING
+        guard.loseTarget();
+        guard.hearNoise();
 
-        guard.loseTarget(); // Should still be PATROLLING
-        System.out.println("Current State: " + guard.getCurrentState());
+        // Test transition from PATROLLING to ATTACKING
+        guard.seeEnemy();
 
-        guard.hearNoise(); // Should still be PATROLLING
-        System.out.println("Current State: " + guard.getCurrentState());
+        // Test behavior while ATTACKING
+        guard.seeEnemy();
+        guard.hearNoise();
 
-        guard.seeEnemy(); // Should transition to ATTACKING
-        System.out.println("Current State: " + guard.getCurrentState());
-
-        guard.seeEnemy(); // Should still be ATTACKING
-        System.out.println("Current State: " + guard.getCurrentState());
-
-        guard.hearNoise(); // Should still be ATTACKING
-        System.out.println("Current State: " + guard.getCurrentState());    
-        guard.loseTarget(); // Should transition back to PATROLLING
-        System.out.println("Current State: " + guard.getCurrentState());
-
+        // Test transition from ATTACKING to PATROLLING
+        guard.loseTarget();
     }
 }
