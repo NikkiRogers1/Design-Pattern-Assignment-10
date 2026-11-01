@@ -3,12 +3,13 @@ public class Main {
 
         SentinelGuard guard = new SentinelGuard();
 
-        System.out.println("Starting State: IDLE");
+        System.out.println("Starting State: SLEEPING");
 
-        // Test losing a target while IDLE
+        guard.seeEnemy(); // Test behavior while SLEEPING
+        // Test losing a target while SLEEPING
         guard.loseTarget();
 
-        // Test transition from IDLE to PATROLLING
+        // Test transition from SLEEPING to PATROLLING
         guard.hearNoise();
 
         // Test behavior while PATROLLING
@@ -24,5 +25,6 @@ public class Main {
 
         // Test transition from ATTACKING to PATROLLING
         guard.loseTarget();
+
     }
 }

@@ -4,3 +4,6 @@ Phase 1 gave me an opportunity to practice using enums and conditional statement
 
 Phase 2- 
 The SentinelGuard acts as the Context because it holds a reference to the current state and delegates the trigger methods to that state. The State objects (IdleState, PatrollingState, and AttackingState) are responsible for handling the behavior associated with each state and determining when a transition should happen. Delegating to state objects instead of checking an enum variable is cleaner because each class manages its own behavior. This keeps the SentinelGuard class from becoming filled with conditional statements. If I need to change the behavior of a particular state, I can make those changes directly in that state's class without having to rewrite the SentinelGuard.
+
+Phase 3- 
+This phase demonstrates the Open/Closed Principle because I can add new functionality by creating a new state without having to modify all the existing state classes. I created the SleepingState class, while SentinelGuard and Main were modified to support and test the new state. The GuardState, IdleState, PatrollingState, and AttackingState classes remained completely untouched. This is beneficial because I can add another state in the future without having to go into every existing state class and change its logic. It makes the program easier to maintain and expand.
